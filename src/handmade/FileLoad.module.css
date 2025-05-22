@@ -1,0 +1,80 @@
+/* src/FileLoad.module.css */
+
+.loader {
+  position: relative; /* 자식 절대위치를 이 박스 기준으로 잡기 */
+  width: 300px;
+  height: 350px;
+  /* flex 속성이 필요하면 추가하세요:
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  */
+}
+
+.loadButton {
+  position: relative;
+  top: 25px;
+  left: -250%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: antiquewhite;
+  cursor: pointer;
+
+  /* 버튼 테두리 명시적으로 추가 */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.icon button {
+  position: relative;
+  top: -97px;
+  left: -120%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: rgb(170, 115, 198);
+  cursor: pointer;
+
+  /* 버튼 테두리 명시적으로 추가 */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.record button {
+  position: relative;
+  top: -100px;
+  left: 73%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: rgb(170, 115, 198);
+  cursor: pointer;
+
+  /* 버튼 테두리 명시적으로 추가 */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+/* 불러온 이미지를 최대 너비/높이 제한하고 중앙 정렬 */
+.previewImage {
+  position: absolute;
+  top: -120%; /* loader 박스 안쪽 상단 */
+  left: -260%; /* loader 박스 안쪽 좌측 */
+  max-width: 200%; /* 부모 너비 안에서 꽉 채우기 */
+  max-height: 200%; /* 부모 높이 안에서 꽉 채우기 */
+  z-index: 1; /* 배경보다 앞에 보이도록 */
+}
+
+.loader p {
+  order: 1; /* 텍스트를 버튼 바로 아래에 위치 */
+  margin: 0; /* 기본 마진 제거 */
+  text-align: center; /* 중앙 정렬 */
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.previewImage {
+  order: -1;
+}

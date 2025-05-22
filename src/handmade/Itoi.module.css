@@ -1,0 +1,164 @@
+/* ────────────────────────────────────────────────────────
+   전역 스타일 (global scope)
+──────────────────────────────────────────────────────── */
+:global(html),
+:global(body) {
+  overflow: hidden; /* 스크롤 막기 */
+  user-select: none; /* 텍스트 선택 방지 */
+  touch-action: none; /* 터치 드래그 막기 */
+  margin: 0;
+  height: 100%;
+}
+
+:global(body) {
+  background: url("/back2.png") no-repeat center/cover;
+}
+
+/* ────────────────────────────────────────────────────────
+   래퍼 박스 (배경 전체)
+──────────────────────────────────────────────────────── */
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ────────────────────────────────────────────────────────
+   파란 박스 (뒤)
+──────────────────────────────────────────────────────── */
+.roundedBox1 {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 700px;
+  height: 480px;
+  background-color: #ecebeb;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  z-index: 0;
+}
+
+/* ────────────────────────────────────────────────────────
+   갈색 박스 (앞)
+──────────────────────────────────────────────────────── */
+.roundedBox2 {
+  position: absolute;
+  top: 10%;
+  left: 75%;
+  transform: translateX(-50%);
+  width: 75%;
+  max-width: 700px;
+  height: 480px;
+  background-color: #ecebeb;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  z-index: 1;
+}
+
+/* ────────────────────────────────────────────────────────
+   박스 바로 아래에 폼 컨테이너
+──────────────────────────────────────────────────────── */
+.container {
+  position: absolute;
+  top: calc(10% + 480px + 1rem); /* 박스 아래로 1rem */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ────────────────────────────────────────────────────────
+   입력 필드들을 가로로 나열
+──────────────────────────────────────────────────────── */
+.formContent {
+  display: flex;
+  flex-direction: row; /* 가로 정렬 */
+  gap: 2rem; /* 필드 사이 간격 */
+  width: 100%;
+}
+
+/* ────────────────────────────────────────────────────────
+   각 필드 (라벨 위/인풋 아래)
+──────────────────────────────────────────────────────── */
+.field {
+  position: relative;
+  left: -0%;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* 동일 너비 분할 */
+  min-width: 0; /* overflow 방지 */
+}
+
+.field label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+/* ────────────────────────────────────────────────────────
+   버튼 그룹 (세 번째 .fieldButtons)
+──────────────────────────────────────────────────────── */
+.fieldButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fieldButtons button {
+  position: relative;
+  left: 900%;
+  top: -130px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 100px;
+  background-color: antiquewhite;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+
+.fieldButton2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fieldButton2 button {
+  position: relative;
+  left: 500%;
+  top: -700px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 100px;
+  background-color: antiquewhite;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+
+.fieldButtons button:hover {
+  filter: brightness(1.1);
+  cursor: pointer;
+}
+
+.fieldButton2 button:hover {
+  filter: brightness(1.1);
+  cursor: pointer;
+}

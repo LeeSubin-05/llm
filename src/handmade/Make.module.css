@@ -1,0 +1,103 @@
+:global(html),
+:global(body) {
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+  margin: 0;
+  height: 100%;
+}
+
+:global(body) {
+  background: url("/back.png") no-repeat center/cover;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+.roundedBox2 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 800px;
+  height: 500px;
+  background-color: #ecebeb;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-end; /* 텍스트를 박스 바닥에 붙이기 */
+  justify-content: center; /* 가로 중앙 */
+  padding-bottom: 1rem;
+}
+
+.usertext {
+  white-space: nowrap;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.container {
+  /* 지금 width:300px 로 고정되어 있어서 두 개를 옆으로 못 붙임 */
+  width: 80%; /* 또는 원하는 픽셀값(예: 600px) */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.formContent {
+  display: flex; /* 컬럼 → 로우 */
+  flex-direction: row; /* 가로 정렬 */
+  gap: 2rem; /* 필드 사이 여백 */
+  justify-content: center; /* 가운데 정렬 */
+  align-items: flex-start; /* 라벨 밑으로 내려가도 위쪽 기준 맞추기 */
+}
+
+.field {
+  display: flex;
+  flex-direction: column; /* 라벨↑ 입력창↓ 은 그대로 */
+  flex: 1; /* 가로공간 동일 분할 */
+  min-width: 0; /* 내용이 넘칠 때 줄바꿈 방지 */
+}
+
+.field label {
+  position: relative;
+  top: 550px;
+  left: 0%;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: antiquewhite;
+}
+
+.field input {
+  position: relative;
+  top: 550px;
+  left: 0%;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.formContent .field:nth-child(3) {
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.field button:hover {
+  filter: brightness(1.1);
+  cursor: pointer;
+}

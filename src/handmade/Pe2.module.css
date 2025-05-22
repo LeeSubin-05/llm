@@ -1,0 +1,100 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+  z-index: 1;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 2;
+  position: relative;
+  top: 0px;
+  left: 60%;
+}
+
+.field label {
+  width: 60px;
+  font-size: 1.1rem;
+}
+
+.field input[type="text"] {
+  width: 200px; /* 공통 가로 너비 */
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.field input[name="act"] {
+  height: 100px;
+}
+
+.field button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border: 1px solid #000;
+  border-radius: 999px;
+  background-color: aquamarine;
+  cursor: pointer;
+  position: relative;
+  top: 0px;
+  left: 15%;
+}
+.field button:hover {
+  filter: brightness(1.1);
+}
+
+.aaImage {
+  width: 600px;
+  height: auto;
+  object-fit: cover;
+  z-index: 4;
+}
+
+.radioGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.talk .aaImage {
+  position: absolute;
+  top: -20%;
+  left: -5%;
+  z-index: 1;
+  width: 800px;
+  height: auto;
+}
+
+.peopel1 {
+  cursor: pointer;
+  position: absolute; /* 이제 문서흐름에서 빠져서 고정 */
+  top: 320px; /* 컨테이너 상단에서 20px 아래 */
+  left: -20px;
+  z-index: 3;
+}

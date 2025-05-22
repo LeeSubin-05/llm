@@ -1,0 +1,86 @@
+/* 1) 화면 중앙 & 배경 */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ccc;
+  position: relative;
+}
+
+/* 2) TT 이미지 */
+.peopel1 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+}
+
+.aaImage {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #999;
+  border-radius: 4px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* 3) Form 영역 */
+.formContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  padding-top: 6rem; /* TT 이미지 아래에 띄우기 */
+}
+
+/* 4) 각 필드 */
+.field {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.field label {
+  width: 60px;
+  font-size: 1.1rem;
+}
+
+/* 텍스트 인풋 */
+.field input[type="text"] {
+  width: 200px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* 라디오 그룹 */
+.radioGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* 버튼 */
+.field button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border: 1px solid #000;
+  border-radius: 999px;
+  background-color: aquamarine;
+  cursor: pointer;
+}
+.field button:hover {
+  filter: brightness(1.1);
+}
+
+/* 5) TALK 이미지 */
+.talk {
+  margin-top: 1rem;
+}
