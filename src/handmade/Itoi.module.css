@@ -162,3 +162,43 @@
   filter: brightness(1.1);
   cursor: pointer;
 }
+
+.dropdown {
+  position: absolute;
+  top: calc(10% + 480px + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* 기존 2에서 크게 증가 */
+}
+
+.dropdown details {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.5em 0.75em;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+.dropdown summary::-webkit-details-marker {
+  display: none;
+}
+.dropdown summary::after {
+  content: " ▼";
+  font-size: 0.8em;
+}
+.options {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.options label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.95em;
+  cursor: pointer;
+}

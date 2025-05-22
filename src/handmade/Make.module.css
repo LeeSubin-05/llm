@@ -1,88 +1,111 @@
+/* ────────────────────────────────────────────────────────
+   전역 스타일 (global scope)
+──────────────────────────────────────────────────────── */
 :global(html),
 :global(body) {
-  overflow: hidden;
-  user-select: none;
-  touch-action: none;
+  overflow: hidden; /* 스크롤 막기 */
+  user-select: none; /* 텍스트 선택 방지 */
+  touch-action: none; /* 터치 드래그 막기 */
   margin: 0;
   height: 100%;
 }
 
 :global(body) {
-  background: url("/back.png") no-repeat center/cover;
+  background: url("/back2.png") no-repeat center/cover;
 }
 
+/* ────────────────────────────────────────────────────────
+   래퍼 박스 (배경 전체)
+──────────────────────────────────────────────────────── */
 .wrapper {
   position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding-top: 2rem;
+  height: 100vh;
 }
 
+/* ────────────────────────────────────────────────────────
+   파란 박스 (뒤)
+──────────────────────────────────────────────────────── */
+.roundedBox1 {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 700px;
+  height: 480px;
+  background-color: #ecebeb;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  z-index: 0;
+}
+
+/* ────────────────────────────────────────────────────────
+   갈색 박스 (앞)
+──────────────────────────────────────────────────────── */
 .roundedBox2 {
   position: absolute;
-  top: 5%;
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
-  max-width: 800px;
-  height: 500px;
+  width: 75%;
+  max-width: 700px;
+  height: 480px;
   background-color: #ecebeb;
   border: 2px solid #ccc;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
   z-index: 1;
-
-  display: flex;
-  align-items: flex-end; /* 텍스트를 박스 바닥에 붙이기 */
-  justify-content: center; /* 가로 중앙 */
-  padding-bottom: 1rem;
 }
 
-.usertext {
-  white-space: nowrap;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #333;
-}
-
+/* ────────────────────────────────────────────────────────
+   박스 바로 아래에 폼 컨테이너
+──────────────────────────────────────────────────────── */
 .container {
-  /* 지금 width:300px 로 고정되어 있어서 두 개를 옆으로 못 붙임 */
-  width: 80%; /* 또는 원하는 픽셀값(예: 600px) */
+  position: absolute;
+  top: calc(10% + 480px + 1rem); /* 박스 아래로 1rem */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 90%;
   max-width: 800px;
-  margin: 0 auto;
-}
-
-.formContent {
-  display: flex; /* 컬럼 → 로우 */
-  flex-direction: row; /* 가로 정렬 */
-  gap: 2rem; /* 필드 사이 여백 */
-  justify-content: center; /* 가운데 정렬 */
-  align-items: flex-start; /* 라벨 밑으로 내려가도 위쪽 기준 맞추기 */
-}
-
-.field {
   display: flex;
-  flex-direction: column; /* 라벨↑ 입력창↓ 은 그대로 */
-  flex: 1; /* 가로공간 동일 분할 */
-  min-width: 0; /* 내용이 넘칠 때 줄바꿈 방지 */
+  justify-content: center;
+}
+
+/* ────────────────────────────────────────────────────────
+   입력 필드들을 가로로 나열
+──────────────────────────────────────────────────────── */
+.formContent {
+  display: flex;
+  flex-direction: row; /* 가로 정렬 */
+  gap: 2rem; /* 필드 사이 간격 */
+  width: 100%;
+}
+
+/* ────────────────────────────────────────────────────────
+   각 필드 (라벨 위/인풋 아래)
+──────────────────────────────────────────────────────── */
+.field {
+  position: relative;
+  left: -0%;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* 동일 너비 분할 */
+  min-width: 0; /* overflow 방지 */
 }
 
 .field label {
-  position: relative;
-  top: 550px;
-  left: 0%;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
-  color: antiquewhite;
 }
 
 .field input {
-  position: relative;
-  top: 550px;
-  left: 0%;
   width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
@@ -91,13 +114,83 @@
   border-radius: 4px;
 }
 
-.formContent .field:nth-child(3) {
-  flex-direction: row;
-  justify-content: flex-end;
+/* ────────────────────────────────────────────────────────
+   버튼 그룹 (세 번째 .fieldButtons)
+──────────────────────────────────────────────────────── */
+.fieldButtons {
+  display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
-.field button:hover {
+.fieldButtons button {
+  position: relative;
+  left: 900%;
+  top: -130px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 100px;
+  background-color: antiquewhite;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+
+.fieldButton2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fieldButton2 button {
+  position: relative;
+  left: 500%;
+  top: -700px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 100px;
+  background-color: antiquewhite;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+
+.fieldButtons button:hover {
   filter: brightness(1.1);
+  cursor: pointer;
+}
+
+.fieldButton2 button:hover {
+  filter: brightness(1.1);
+  cursor: pointer;
+}
+
+.dropdown details {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.5em 0.75em;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+.dropdown summary::-webkit-details-marker {
+  display: none;
+}
+.dropdown summary::after {
+  content: " ▼";
+  font-size: 0.8em;
+}
+.options {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.options label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.95em;
   cursor: pointer;
 }

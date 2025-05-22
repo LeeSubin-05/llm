@@ -19,6 +19,21 @@ export default function Itoi() {
 
   return (
     <div className={styles.wrapper}>
+      {/* 작화 고르기 드롭다운 */}
+      <div className={styles.dropdown}>
+        <details>
+          <summary>작화 고르기</summary>
+          <div className={styles.options}>
+            <label>
+              <input type="checkbox" value="지브리" /> 지브리
+            </label>
+            <label>
+              <input type="checkbox" value="디즈니" /> 디즈니
+            </label>
+          </div>
+        </details>
+      </div>
+
       <div className={styles.roundedBox1} />
       <div className={styles.roundedBox2}>
         {Designation && <div className={styles.usertext}></div>}

@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: none;
 }
 
 .container {
@@ -13,88 +12,74 @@
   z-index: 1;
 }
 
+.peopel1 {
+  position: absolute;
+  top: 320px;
+  left: 0;
+  cursor: pointer;
+  z-index: 3;
+  width: 800px;
+  height: auto;
+}
+
 .formContent {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
-  position: relative;
-  z-index: 2;
 }
 
 .field {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
   position: relative;
-  z-index: 2;
-  position: relative;
-  top: 0px;
-  left: 60%;
+  top: 50px;
+  left: 68%;
+  z-index: 1;
+}
+
+/* replace your input with a textarea in JSX, then style it: */
+.field textarea {
+  width: 350px;
+  height: 200px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  resize: none; /* 사용자가 크기 조절 못하게 */
+  white-space: pre-wrap; /* 줄바꿈 유지하며 텍스트 래핑 */
+  word-break: break-word; /* 단어 단위로 넘칠 때 줄바꿈 */
+  overflow-wrap: break-word; /* 긴 단어도 래핑 */
 }
 
 .field label {
-  width: 60px;
   font-size: 1.1rem;
 }
 
 .field input[type="text"] {
-  width: 200px; /* 공통 가로 너비 */
+  width: 350px;
+  height: 200px;
   padding: 0.5rem;
   font-size: 1rem;
   box-sizing: border-box;
+  writing-mode: horizontal-tb;
 }
 
-.field input[name="act"] {
-  height: 100px;
-}
-
-.field button {
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  border: 1px solid #000;
-  border-radius: 999px;
-  background-color: aquamarine;
-  cursor: pointer;
-  position: relative;
-  top: 0px;
+.talk .aaImage {
+  position: absolute;
+  top: -10%;
   left: 15%;
-}
-.field button:hover {
-  filter: brightness(1.1);
+  z-index: 1;
+  width: 800px;
+  height: auto;
+  z-index: 0;
 }
 
 .aaImage {
   width: 600px;
   height: auto;
   object-fit: cover;
-  z-index: 4;
-}
-
-.radioGroup {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.radioLabel {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.talk .aaImage {
-  position: absolute;
-  top: -20%;
-  left: -5%;
-  z-index: 1;
-  width: 800px;
-  height: auto;
-}
-
-.peopel1 {
-  cursor: pointer;
-  position: absolute; /* 이제 문서흐름에서 빠져서 고정 */
-  top: 320px; /* 컨테이너 상단에서 20px 아래 */
-  left: -20px;
-  z-index: 3;
+  z-index: 0;
 }

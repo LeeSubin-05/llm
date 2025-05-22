@@ -19,19 +19,19 @@ const Pe2 = () => {
 
         {showForm && (
           <div className={styles.formContent}>
-            {/* 기타 */}
             <div className={styles.field}>
-              <label htmlFor="act">기타:</label>
-              <input
-                type="text"
+              <label htmlFor="act">자기 소개:</label>
+              <textarea
                 id="act"
                 name="act"
                 value={act}
                 onChange={(e) => setAct(e.target.value)}
+                placeholder="긴 갈색 머리를 자연스럽게 늘어뜨린 채 검정 동그란 안경을 쓰고,
+                 흰색 니트 스웨터와 네이비 체크 치마, 
+                 흰색 양말과 로퍼를 착용한 미소 짓는 여학생"
               />
             </div>
 
-            {/* TALK 이미지 */}
             <div className={styles.talk}>
               <img
                 src={talk}
